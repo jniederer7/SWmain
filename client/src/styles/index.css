@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+    min-height: 100vh;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.App {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100vw;
+}
+
+main {
+    height: auto;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.Select-menu-outer {
+    z-index: 500;
+}
+
+.stock-cards {
+    box-sizing: border-box;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 1px solid #a7a7a7;
+    box-shadow: 1px 1px 5px #3c3c3c;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.stock-card {
+    box-sizing: border-box;
+    min-width: 280px;
+    max-width: 500px;
+    width: 47.5%;
+    position: relative;
+    padding: 20px;
+    border: 1px solid #a7a7a7;
+    box-shadow: 1px 1px 5px #3c3c3c;
+    margin-bottom: 20px;
+}
+
+.stock-card__info-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.stock-card__ceo {
+    margin-bottom: 10px;
+}
+
+.stock-card__previous-price .price {
+    font-weight: 600;
+    color: rgb(170, 115, 6);
+}
+
+.stock-card a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px auto;
+    color: seagreen;
+    transition: all 250ms ease-in-out;
+}
+
+.stock-card a:hover {
+    text-decoration: underline;
+    color: darkgreen;
+}
+
+.stock-card .remove-btn,
+.stock-card .refresh-btn {
+    font-weight: 600;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    transition: all 250ms ease-in-out;
+    position: absolute;
+}
+
+.stock-card .remove-btn {
+    right: 0;
+    top: 0;
+}
+
+.stock-card .refresh-btn {
+    left: 0;
+    top: 0;
+    transform: scale(1.0);
+}
+
+.stock-card .remove-btn:hover {
+    font-size: 20px;
+    color: #888888;
+}
+
+.stock-card .refresh-btn:hover {
+    fill: #888888;
+    transform: scale(1.2);
+}
+
+.refresh.loading {
+    animation: refresh-logo-spin infinite 1s linear;
+}
+
+@keyframes refresh-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .stock-card {
+        width: 100%;
+        margin: 20px auto;
+    }
+    .stock-card+.stock-card {
+        margin-left: 0;
+    }
+}
+
+.ticker-wrap {
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    height: 48px;
+    background-color: rgb(224, 218, 167);
+    padding-left: 100%;
+}
+
+.ticker {
+    display: inline-block;
+    height: 48px;
+    line-height: 48px;
+    white-space: nowrap;
+    padding-right: 100%;
+}
+
+.ticker.scrolling {
+    -webkit-animation-name: ticker;
+    animation-name: ticker;
+    -webkit-animation-duration: 20000s;
+    animation-duration: 20000s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.ticker__item {
+    display: inline-block;
+    padding: 0 24px;
+    font-size: 24px;
+    color: black;
+}
+
+.ticker__item--details {
+    display: flex;
+    justify-content: space-around;
+}
+
+.ticker__item--details span+span {
+    padding-left: 10px;
+}
+
+.ticker__item--symbol,
+.stock-card__symbol {
+    color: rgb(151, 111, 58);
+    font-weight: 600;
+}
+
+.ticker__item--change.positive {
+    color: rgb(44, 195, 44);
+}
+
+.ticker__item--change.negative {
+    color: rgb(197, 29, 29);
+}
+
+@-webkit-keyframes ticker {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes ticker {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
