@@ -57,7 +57,10 @@ class App extends Component {
         <div className="ticker-wrap">
           <Ticker {...this.props}/>
         </div>
-        <div>Previous Trading Session - {moment(this.state.previousSession).format('MMM Do, YYYY')}</div>
+        <div>
+          <p></p>        
+        </div>
+        <div><span className="brand">StockWatch</span> | Last Trading Session: {moment(this.state.previousSession).format('MMM Do, YYYY')}</div>
         <main>
           <StockChart {...this.props}/>
           <StockSelect label='Search For Stock' {...this.props}/>

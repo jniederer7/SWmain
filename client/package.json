@@ -2,7 +2,7 @@
   "name": "stock-watch",
   "version": "0.1.0",
   "private": true,
-  "author": "Julian Hasse",
+  "author": "null++",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.16.2",

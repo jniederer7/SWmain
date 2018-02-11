@@ -1,7 +1,7 @@
 {
   "name": "stock-watch",
   "version": "1.0.0",
-  "description": "MERN stack SPA using WebSockets to display live data related to trading stocks",
+  "description": "MERN stack SPA using WebSockets to display live trading stocks",
   "main": "server.js",
   "dependencies": {
     "axios": "^0.17.1",
@@ -46,7 +46,7 @@
     "type": "git",
     "url": "git+https://github.com/jniederer7/Project3"
   },
-  "author": "Julian Hasse",
+  "author": "null++",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jniederer7/Project3"

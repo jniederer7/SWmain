@@ -22,6 +22,11 @@ main {
     margin-top: 50px;
 }
 
+.brand {
+    color: rgb(170, 115, 6);
+    font-weight: bold;
+}
+
 .Select-menu-outer {
     z-index: 500;
 }
@@ -141,7 +146,7 @@ main {
     width: 100%;
     overflow: hidden;
     height: 48px;
-    background-color: rgb(224, 218, 167);
+    background-color: rgb(227, 224, 202);
     padding-left: 100%;
 }
 
