@@ -2,7 +2,7 @@ export default class StateLoader {
 
   loadState() {
     try {
-      let serializedState = localStorage.getItem("stock-viewz:state");
+      let serializedState = localStorage.getItem("stock-watch:state");
 
       if (serializedState === null) {
         return this.initializeState();
@@ -18,7 +18,7 @@ export default class StateLoader {
   saveState(state) {
     try {
       let serializedState = JSON.stringify(state);
-      localStorage.setItem("stock-viewz:state", serializedState);
+      localStorage.setItem("stock-watch:state", serializedState);
 
     }
     catch (err) {
